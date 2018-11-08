@@ -1,0 +1,997 @@
+// border bc || *2 Separator、QSplitter::handle:hover 's bc // *2 滚动条背景色
+$color-1 = rgb(118, 121, 124); $color--10 = rgb(96, 95, 95)
+// QToolTip bc // *1 QPushButton:checked 's bc
+$color-2 = rgb(90, 102, 117) ; $color--14 = rgb(106, 105, 105)
+// *3 QWidget、QPushbUTTON::disable 's color border 
+// *10 文本输入框 *Edit *View  QAbstractItemView QSlider 's bc
+$color-7 = rgb(69, 69, 69) ; $color-8 = rgb(222, 222, 222)
+// *4 QScrollBar 's border bc // *1 QToolBar 's border || *1 QDockWidget border
+$color-9 = rgb(42, 41, 41) ; $color--12 = rgb(57, 56, 56)
+// *6 QSlider // *4 QTabBar 's bc || *1 QToolButton #qt_toolbar_ext_button
+$color--19 = rgb(86, 90, 94) ; $color--15 = rgb(222, 222, 222)
+// *2 QCombobox、QDateEdit :on bc 
+$color--23 = rgb(74, 74, 74)
+// 字体颜色                   
+$color-3 = rgb(0, 0, 0) ;  
+// 背景颜色 黑色主题
+$color-4 = rgb(222, 222, 222)
+// *5 widget、view item::hover  ::select 's bc
+$color-5 = rgb(24, 70, 93)
+// *17 border
+$color-6 = rgb(61, 174, 233)
+// *2 QListView::item:selected:active QTreeView::item:selected:hover  // *2 QDateEdit、QAbstractItemView 's border
+$color--18 = rgb(40, 115, 153) ;  $color--22 = rgb(51, 117, 163)
+// *1 QHeaderView::section:checked 's bc
+$color--20 = rgb(51, 78, 94)
+
+/*  比较冷门  */
+
+// *2 QDockWidget::float-button
+$color--17 = rgb(255, 255, 255)
+// *1 QProgressBar::chunk 's bc
+$color--21 = rgb(5, 184, 204)
+
+
+
+QToolTip
+    border 1px solid $color-1
+    background-color $color-2
+    color white
+    padding 5px
+    opacity 200
+
+QWidget
+    color $color-3
+    background-color $color-4
+    selection-background-color $color-6
+    selection-color $color-3
+    background-clip border
+    border-image none
+    border 0px transparent black
+    outline 0
+
+    &:item
+        &:hover
+            background-color $color-5
+            color $color-3
+
+        &:selected
+            background-color $color-5
+
+    &:disabled
+        color $color-7
+        background-color $color-4
+
+QCheckBox
+    spacing 5px
+    outline none
+    color $color-3
+    margin-bottom 2px
+
+    &:disabled
+        color $color-1
+
+QCheckBox::indicator
+QGroupBox::indicator
+    width 18px
+    height 18px
+
+QGroupBox::indicator
+    margin-left 2px
+
+QCheckBox::indicator:unchecked
+    image url(:/qss_icons/rc/checkbox_unchecked.png)
+
+QCheckBox::indicator:unchecked:hover
+QCheckBox::indicator:unchecked:focus
+QCheckBox::indicator:unchecked:pressed
+QGroupBox::indicator:unchecked:hover
+QGroupBox::indicator:unchecked:focus
+QGroupBox::indicator:unchecked:pressed
+    border none
+    image url(:/qss_icons/rc/checkbox_unchecked_focus.png)
+
+QCheckBox::indicator:checked
+    image url(:/qss_icons/rc/checkbox_checked.png)
+
+QCheckBox::indicator:checked:hover
+QCheckBox::indicator:checked:focus
+QCheckBox::indicator:checked:pressed
+QGroupBox::indicator:checked:hover
+QGroupBox::indicator:checked:focus
+QGroupBox::indicator:checked:pressed
+    border none
+    image url(:/qss_icons/rc/checkbox_checked_focus.png)
+
+QCheckBox::indicator:indeterminate
+    image url(:/qss_icons/rc/checkbox_indeterminate.png)
+
+QCheckBox::indicator:indeterminate:focus
+QCheckBox::indicator:indeterminate:hover
+QCheckBox::indicator:indeterminate:pressed
+    image url(:/qss_icons/rc/checkbox_indeterminate_focus.png)
+
+QCheckBox::indicator:checked:disabled
+QGroupBox::indicator:checked:disabled
+    image url(:/qss_icons/rc/checkbox_checked_disabled.png)
+
+QCheckBox::indicator:unchecked:disabled
+QGroupBox::indicator:unchecked:disabled
+    image url(:/qss_icons/rc/checkbox_unchecked_disabled.png)
+
+QRadioButton
+    spacing 5px
+    outline none
+    color $color-3
+    margin-bottom 2px
+
+    &:disabled
+        color $color-1
+
+    &::indicator
+        width 21px
+        height 21px
+
+    &::indicator:unchecked
+        image url(:/qss_icons/rc/radio_unchecked.png)
+
+    &::indicator:unchecked:hover
+    &::indicator:unchecked:focus
+    &::indicator:unchecked:pressed
+        border none
+        outline none
+        image url(:/qss_icons/rc/radio_unchecked_focus.png)
+
+    &::indicator:checked
+        border none
+        outline none
+        image url(:/qss_icons/rc/radio_checked.png)
+
+    &::indicator:checked:hover
+    &::indicator:checked:focus
+    &::indicator:checked:pressed
+        border none
+        outline none
+        image url(:/qss_icons/rc/radio_checked_focus.png)
+
+    &::indicator:checked:disabled
+    outline none
+        image url(:/qss_icons/rc/radio_checked_disabled.png)
+
+    &::indicator:unchecked:disabled
+        image url(:/qss_icons/rc/radio_unchecked_disabled.png)
+
+QMenuBar
+    background-color $color-4
+    color $color-3
+
+QMenuBar::item
+    background transparent
+
+QMenuBar::item:selected
+    background transparent
+    border 1px solid $color-1
+
+QMenuBar::item:pressed
+    border 1px solid $color-1
+    background-color $color-6
+    color $color-3
+    margin-bottom -1px
+    padding-bottom 1px
+
+QMenu
+    border 1px solid $color-1
+    color $color-3
+    margin 2px
+
+QMenu::icon
+    margin 5px
+
+QMenu::item
+    padding 5px 30px 5px 30px
+    margin-left 5px
+    border 1px solid transparent
+
+QMenu::item:selected
+    color $color-3
+
+QMenu::separator
+    height 2px
+    background lightblue
+    margin-left 10px
+    margin-right 5px
+    height 1px
+    background-color $color-1
+    color white
+    padding-left 4px
+
+QMenu::indicator
+    width 18px
+    height 18px
+
+QMenu::indicator:non-exclusive:unchecked
+    image url(:/qss_icons/rc/checkbox_unchecked.png)
+
+QMenu::indicator:non-exclusive:unchecked:selected
+    image url(:/qss_icons/rc/checkbox_unchecked_disabled.png)
+
+QMenu::indicator:non-exclusive:checked
+    image url(:/qss_icons/rc/checkbox_checked.png)
+
+QMenu::indicator:non-exclusive:checked:selected
+    image url(:/qss_icons/rc/checkbox_checked_disabled.png)
+
+QMenu::indicator:exclusive:unchecked
+    image url(:/qss_icons/rc/radio_unchecked.png)
+
+QMenu::indicator:exclusive:unchecked:selected
+    image url(:/qss_icons/rc/radio_unchecked_disabled.png)
+
+QMenu::indicator:exclusive:checked
+    image url(:/qss_icons/rc/radio_checked.png)
+
+QMenu::indicator:exclusive:checked:selected
+    image url(:/qss_icons/rc/radio_checked_disabled.png)
+
+QMenu::right-arrow
+    margin 5px
+    image url(:/qss_icons/rc/right_arrow.png)
+
+QAbstractItemView
+    alternate-background-color $color-4
+    color $color-3
+    border 1px solid 3A3939
+    border-radius 2px
+
+    QLineEdit
+        padding 0
+
+QWidget:focus
+QMenuBar:focus
+    border 1px solid $color-6
+
+QTabWidget:focus
+QCheckBox:focus
+QRadioButton:focus
+QSlider:focus
+    border none
+
+QLineEdit
+    background-color $color-8
+    padding 5px
+    border-style solid
+    border 1px solid $color-1
+    border-radius 2px
+    color $color-3
+
+QGroupBox
+    border 1px solid $color-1
+    border-radius 2px
+    margin-top 20px
+
+QGroupBox::title
+    subcontrol-origin margin
+    subcontrol-position top center
+    padding-left 10px
+    padding-right 10px
+    padding-top 10px
+
+QAbstractScrollArea
+    border-radius 2px
+    border 1px solid $color-1
+    background-color transparent
+
+QScrollBar
+    &:horizontal
+        height 15px
+        margin 3px 15px 3px 15px
+        border 1px transparent $color-9
+        border-radius 4px
+        background-color $color-9
+
+    &:vertical
+        background-color $color-9
+        width 15px
+        margin 15px 3px 15px 3px
+        border 1px transparent $color-9
+        border-radius 4px
+
+QScrollBar::handle:horizontal
+    background-color $color--10
+    min-width 5px
+    border-radius 4px
+
+QScrollBar::add-line:horizontal
+    margin 0px 3px 0px 3px
+    border-image url(:/qss_icons/rc/right_arrow_disabled.png)
+    width 10px
+    height 10px
+    subcontrol-position right
+    subcontrol-origin margin
+
+QScrollBar::sub-line:horizontal
+    margin 0px 3px 0px 3px
+    border-image url(:/qss_icons/rc/left_arrow_disabled.png)
+    height 10px
+    width 10px
+    subcontrol-position left
+    subcontrol-origin margin
+
+QScrollBar::add-line:horizontal:hover
+QScrollBar::add-line:horizontal:on
+    border-image url(:/qss_icons/rc/right_arrow.png)
+    height 10px
+    width 10px
+    subcontrol-position right
+    subcontrol-origin margin
+
+QScrollBar::sub-line:horizontal:hover
+QScrollBar::sub-line:horizontal:on
+    border-image url(:/qss_icons/rc/left_arrow.png)
+    height 10px
+    width 10px
+    subcontrol-position left
+    subcontrol-origin margin
+
+QScrollBar::up-arrow:horizontal
+QScrollBar::down-arrow:horizontal
+    background none
+
+QScrollBar::add-page:horizontal
+QScrollBar::sub-page:horizontal
+    background none
+
+QScrollBar::handle:vertical
+    background-color $color--10
+    min-height 5px
+    border-radius 4px
+
+QScrollBar::sub-line:vertical
+    margin 3px 0px 3px 0px
+    border-image url(:/qss_icons/rc/up_arrow_disabled.png)
+    height 10px
+    width 10px
+    subcontrol-position top
+    subcontrol-origin margin
+
+QScrollBar::add-line:vertical
+    margin 3px 0px 3px 0px
+    border-image url(:/qss_icons/rc/down_arrow_disabled.png)
+    height 10px
+    width 10px
+    subcontrol-position bottom
+    subcontrol-origin margin
+
+QScrollBar::sub-line:vertical:hover
+QScrollBar::sub-line:vertical:on
+    border-image url(:/qss_icons/rc/up_arrow.png)
+    height 10px
+    width 10px
+    subcontrol-position top
+    subcontrol-origin margin
+
+QScrollBar::add-line:vertical:hover
+QScrollBar::add-line:vertical:on
+    border-image url(:/qss_icons/rc/down_arrow.png)
+    height 10px
+    width 10px
+    subcontrol-position bottom
+    subcontrol-origin margin
+
+QScrollBar::up-arrow:vertical
+QScrollBar::down-arrow:vertical
+    background none
+
+QScrollBar::add-page:vertical
+QScrollBar::sub-page:vertical
+    background none
+
+QTextEdit
+    background-color $color-8
+    color $color-3
+    border 1px solid $color-1
+
+QPlainTextEdit
+    background-color $color-8
+    color $color-3
+    border-radius 2px
+    border 1px solid $color-1
+
+QHeaderView::section
+    background-color $color-1
+    color $color-3
+    padding 5px
+    border 1px solid $color-1
+    background-color $color-4
+    border-radius 0px
+    text-align center
+
+QSizeGrip
+    image url(:/qss_icons/rc/sizegrip.png)
+    width 12px
+    height 12px
+
+QMainWindow::separator
+    background-color $color-4
+    color white
+    padding-left 4px
+    spacing 2px
+    border 1px dashed $color-1
+
+QMainWindow::separator:hover
+    background-color $color-1
+    color white
+    padding-left 4px
+    border 1px solid $color-1
+    spacing 2px
+
+QFrame
+    border-radius 2px
+    border 1px solid $color-1
+
+QFrame[frameShape="0"]
+    border-radius 2px
+    border 1px transparent $color-1
+
+QStackedWidget
+    border 1px transparent black
+
+// QToolBar
+QToolBar
+    border 1px transparent $color--12
+    background 1px solid $color-4
+    font-weight bold
+
+QToolBar::handle:horizontal
+    image url(:/qss_icons/rc/Hmovetoolbar.png)
+
+QToolBar::handle:vertical
+    image url(:/qss_icons/rc/Vmovetoolbar.png)
+
+QToolBar::separator:horizontal
+    image url(:/qss_icons/rc/Hsepartoolbar.png)
+
+QToolBar::separator:vertical
+    image url(:/qss_icons/rc/Vsepartoolbar.png)
+
+// QToolButton
+QToolButton
+    background-color transparent
+    border 1px transparent $color-1
+    border-radius 2px
+    margin 3px
+    padding 5px
+
+    &#qt_toolbar_ext_button
+        background $color--15
+// QPushButton
+QPushButton
+    color $color-3
+    background-color $color-4
+    border-width 1px
+    border-color $color-1
+    border-style solid
+    padding 5px
+    border-radius 2px
+    outline none
+
+    &:disabled
+        background-color $color-4
+        border-width 1px
+        border-color $color-7
+        border-style solid
+        padding-top 5px
+        padding-bottom 5px
+        padding-left 10px
+        padding-right 10px
+        border-radius 2px
+        color $color-7
+
+    &:focus
+        background-color $color-6
+        color white
+
+    &:pressed
+        background-color $color-6
+        padding-top -15px
+        padding-bottom -17px
+
+    &:checked
+        background-color $color-1
+        border-color $color--14
+
+// QComboBox
+QComboBox
+    selection-background-color $color-6
+    border-style solid
+    border 1px solid $color-1
+    border-radius 2px
+    padding 5px
+    min-width 75px
+
+    &:on
+        padding-top 3px
+        padding-left 4px
+        selection-background-color $color--23
+
+    QAbstractItemView
+        background-color $color-8
+        border-radius 2px
+        border 1px solid $color-1
+        selection-background-color $color-5
+
+QComboBox:hover
+QPushButton:hover
+QAbstractSpinBox:hover
+QLineEdit:hover
+QTextEdit:hover
+QPlainTextEdit:hover
+QAbstractView:hover
+QTreeView:hover
+    border 1px solid $color-6
+    color $color-3
+
+QComboBox::drop-down
+    subcontrol-origin padding
+    subcontrol-position top right
+    width 15px
+    border-left-width 0px
+    border-left-color darkgray
+    border-left-style solid
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
+
+QComboBox::down-arrow
+    image url(:/qss_icons/rc/down_arrow_disabled.png)
+
+QComboBox::down-arrow:on
+QComboBox::down-arrow:hover
+QComboBox::down-arrow:focus
+    image url(:/qss_icons/rc/down_arrow.png)
+
+QAbstractSpinBox
+    padding 5px
+    border 1px solid $color-1
+    background-color $color-8
+    color $color-3
+    border-radius 2px
+    min-width 75px
+
+    &:up-button
+        background-color transparent
+        subcontrol-origin border
+        subcontrol-position center right
+
+    &:down-button
+        background-color transparent
+        subcontrol-origin border
+        subcontrol-position center left
+
+QAbstractSpinBox::up-arrow
+QAbstractSpinBox::up-arrow:disabled
+QAbstractSpinBox::up-arrow:off
+    image url(:/qss_icons/rc/up_arrow_disabled.png)
+    width 10px
+    height 10px
+
+QAbstractSpinBox::up-arrow:hover
+    image url(:/qss_icons/rc/up_arrow.png)
+
+QAbstractSpinBox::down-arrow
+QAbstractSpinBox::down-arrow:disabled
+QAbstractSpinBox::down-arrow:off
+    image url(:/qss_icons/rc/down_arrow_disabled.png)
+    width 10px
+    height 10px
+
+QAbstractSpinBox::down-arrow:hover
+    image url(:/qss_icons/rc/down_arrow.png)
+
+QLabel
+    border 0px solid black
+
+QTabWidget
+    border 0px transparent black
+
+QTabWidget::pane
+    border 1px solid $color-1
+    padding 5px
+    margin 0px
+
+QTabWidget::tab-bar
+    left 5px
+
+QTabBar
+    qproperty-drawBase 0
+    border-radius 3px
+
+    &:focus
+        border 0px transparent black
+
+    QToolButton::right-arrow:enabled
+        image url(:/qss_icons/rc/right_arrow.png)
+
+    QToolButton::left-arrow:enabled
+        image url(:/qss_icons/rc/left_arrow.png)
+
+    QToolButton::right-arrow:disabled
+        image url(:/qss_icons/rc/right_arrow_disabled.png)
+
+    QToolButton::left-arrow:disabled
+        image url(:/qss_icons/rc/left_arrow_disabled.png)
+
+QTabBar::close-button
+    image url(:/qss_icons/rc/close.png)
+    background transparent
+
+QTabBar::close-button:hover
+    image url(:/qss_icons/rc/close-hover.png)
+    background transparent
+
+QTabBar::close-button:pressed
+    image url(:/qss_icons/rc/close-pressed.png)
+    background transparent
+
+QTabBar::tab:top
+    color $color-3
+    border 1px solid $color-1
+    border-bottom 1px transparent black
+    background-color $color-4
+    padding 5px
+    min-width 50px
+    border-top-left-radius 2px
+    border-top-right-radius 2px
+
+QTabBar::tab:top:!selected
+    color $color-3
+    background-color $color--15
+    border 1px solid $color-1
+    border-bottom 1px transparent black
+    border-top-left-radius 2px
+    border-top-right-radius 2px
+
+QTabBar::tab:top:!selected:hover
+    background-color $color-6
+
+QTabBar::tab:bottom
+    color $color-3
+    border 1px solid $color-1
+    border-top 1px transparent black
+    background-color $color-4
+    padding 5px
+    border-bottom-left-radius 2px
+    border-bottom-right-radius 2px
+    min-width 50px
+
+QTabBar::tab:bottom:!selected
+    color $color-3
+    background-color $color--15
+    border 1px solid $color-1
+    border-top 1px transparent black
+    border-bottom-left-radius 2px
+    border-bottom-right-radius 2px
+
+QTabBar::tab:bottom:!selected:hover
+    background-color $color-6
+
+QTabBar::tab:left
+    color $color-3
+    border 1px solid $color-1
+    border-left 1px transparent black
+    background-color $color-4
+    padding 5px
+    border-top-right-radius 2px
+    border-bottom-right-radius 2px
+    min-height 50px
+
+QTabBar::tab:left:!selected
+    color $color-3
+    background-color $color--15
+    border 1px solid $color-1
+    border-left 1px transparent black
+    border-top-right-radius 2px
+    border-bottom-right-radius 2px
+
+QTabBar::tab:left:!selected:hover
+    background-color $color-6
+
+QTabBar::tab:right
+    color $color-3
+    border 1px solid $color-1
+    border-right 1px transparent black
+    background-color $color-4
+    padding 5px
+    border-top-left-radius 2px
+    border-bottom-left-radius 2px
+    min-height 50px
+
+QTabBar::tab:right:!selected
+    color $color-3
+    background-color $color--15
+    border 1px solid $color-1
+    border-right 1px transparent black
+    border-top-left-radius 2px
+    border-bottom-left-radius 2px
+
+QTabBar::tab:right:!selected:hover
+    background-color $color-6
+
+QDockWidget
+    background $color-4
+    border 1px solid $color--12
+    titlebar-close-icon url(:/qss_icons/rc/close.png)
+    titlebar-normal-icon url(:/qss_icons/rc/undock.png)
+
+QDockWidget::close-button
+QDockWidget::float-button
+    border 1px solid transparent
+    border-radius 2px
+    background transparent
+
+QDockWidget::close-button:hover
+QDockWidget::float-button:hover
+    background $color--17
+
+QDockWidget::close-button:pressed
+QDockWidget::float-button:pressed
+    padding 1px -1px -1px 1px
+    background $color--17
+
+QTreeView
+QListView
+    border 1px solid $color-1
+    background-color $color-8
+
+QTreeView:branch:selected
+QTreeView:branch:hover
+    background url(:/qss_icons/rc/transparent.png)
+
+QTreeView::branch:has-siblings:!adjoins-item
+    border-image url(:/qss_icons/rc/transparent.png)
+
+QTreeView::branch:has-siblings:adjoins-item
+    border-image url(:/qss_icons/rc/transparent.png)
+
+QTreeView::branch:!has-children:!has-siblings:adjoins-item
+    border-image url(:/qss_icons/rc/transparent.png)
+
+QTreeView::branch:has-children:!has-siblings:closed
+QTreeView::branch:closed:has-children:has-siblings
+    image url(:/qss_icons/rc/branch_closed.png)
+
+QTreeView::branch:open:has-children:!has-siblings
+QTreeView::branch:open:has-children:has-siblings
+    image url(:/qss_icons/rc/branch_open.png)
+
+QTreeView::branch:has-children:!has-siblings:closed:hover
+QTreeView::branch:closed:has-children:has-siblings:hover
+    image url(:/qss_icons/rc/branch_closed-on.png)
+
+QTreeView::branch:open:has-children:!has-siblings:hover
+QTreeView::branch:open:has-children:has-siblings:hover
+    image url(:/qss_icons/rc/branch_open-on.png)
+
+QListView::item:!selected:hover
+QTreeView::item:!selected:hover
+    background $color-5
+    outline 0
+    color $color-3
+
+QListView::item:selected:hover
+QTreeView::item:selected:hover
+    background $color--18
+    color $color-3
+
+QSlider::groove:horizontal
+    border 1px solid $color--19
+    height 4px
+    background $color--19
+    margin 0px
+    border-radius 2px
+
+QSlider::handle:horizontal
+    background $color-8
+    border 1px solid $color--19
+    width 16px
+    height 16px
+    margin -8px 0
+    border-radius 9px
+
+QSlider::groove:vertical
+    border 1px solid $color--19
+    width 4px
+    background $color--19
+    margin 0px
+    border-radius 3px
+
+QSlider::handle:vertical
+    background $color-8
+    border 1px solid $color--19
+    width 16px
+    height 16px
+    margin 0 -8px
+    border-radius 9px
+
+QToolButton[popupMode="1"]
+    padding-right 20px
+    border 1px $color-1
+    border-radius 5px
+
+QToolButton[popupMode="2"]
+    padding-right 10px
+    border 1px $color-1
+
+QToolButton:hover
+QToolButton::menu-button:hover
+    background-color transparent
+    border 1px solid $color-6
+    padding 5px
+
+QToolButton:checked
+QToolButton:pressed
+QToolButton::menu-button:pressed
+    background-color $color-6
+    border 1px solid $color-6
+    padding 5px
+
+QToolButton::menu-indicator
+    image url(:/qss_icons/rc/down_arrow.png)
+    top -7px
+    left -2px
+
+QToolButton::menu-button
+    border 1px transparent $color-1
+    border-top-right-radius 6px
+    border-bottom-right-radius 6px
+    width 16px
+    outline none
+
+QToolButton::menu-arrow
+    image url(:/qss_icons/rc/down_arrow.png)
+
+QToolButton::menu-arrow:open
+    border 1px solid $color-1
+
+QPushButton::menu-indicator
+    subcontrol-origin padding
+    subcontrol-position bottom right
+    left 8px
+
+QTableView
+    border 1px solid $color-1
+    gridline-color $color-4
+    background-color $color-8
+
+QTableView
+QHeaderView
+    border-radius 0px
+
+QTableView::item:pressed
+QListView::item:pressed
+QTreeView::item:pressed
+    background $color-5
+    color $color-3
+
+QTableView::item:selected:active
+QTreeView::item:selected:active
+QListView::item:selected:active
+    background $color--18
+    color $color-3
+
+QHeaderView
+    background-color $color-4
+    border 1px transparent
+    border-radius 0px
+    margin 0px
+    padding 0px
+
+QHeaderView::section::vertical::first
+QHeaderView::section::vertical::only-one
+    border-top 1px solid $color-1
+
+QHeaderView::section::vertical
+    border-top transparent
+
+QHeaderView::section::horizontal::first
+QHeaderView::section::horizontal::only-one
+    border-left 1px solid $color-1
+
+QHeaderView::section::horizontal
+    border-left transparent
+
+QHeaderView::section:checked
+    color white
+    background-color $color--20
+
+QHeaderView::down-arrow
+    image url(:/qss_icons/rc/down_arrow.png)
+
+QHeaderView::up-arrow
+    image url(:/qss_icons/rc/up_arrow.png)
+
+QTableCornerButton::section
+    background-color $color-4
+    border 1px transparent $color-1
+    border-radius 0px
+
+QToolBox
+    padding 5px
+    border 1px transparent black
+
+QToolBox::tab
+    color $color-3
+    background-color $color-4
+    border 1px solid $color-1
+    border-bottom 1px transparent $color-4
+    border-top-left-radius 5px
+    border-top-right-radius 5px
+
+QToolBox::tab:selected
+    font italic
+    background-color $color-4
+    border-color $color-6
+
+QStatusBar::item
+    border 0px transparent dark
+
+QFrame[height="3"]
+QFrame[width="3"]
+    background-color $color-1
+
+QSplitter::handle
+    border 1px dashed $color-1
+
+QSplitter::handle:hover
+    background-color $color-1
+    border 1px solid $color-1
+
+QSplitter::handle:horizontal
+    width 1px
+
+QSplitter::handle:vertical
+    height 1px
+
+QProgressBar
+    border 1px solid $color-1
+    border-radius 5px
+    text-align center
+
+QProgressBar::chunk
+    background-color $color--21
+
+QDateEdit
+    selection-background-color $color-6
+    border-style solid
+    border 1px solid $color--22
+    border-radius 2px
+    padding 1px
+    min-width 75px
+
+    &:on
+        padding-top 3px
+        padding-left 4px
+        selection-background-color $color--23
+
+    QAbstractItemView
+        background-color $color-8
+        border-radius 2px
+        border 1px solid $color--22
+        selection-background-color $color-6
+
+QDateEdit::drop-down
+    subcontrol-origin padding
+    subcontrol-position top right
+    width 15px
+    border-left-width 0px
+    border-left-color darkgray
+    border-left-style solid
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
+
+QDateEdit::down-arrow
+    image url(:/qss_icons/rc/down_arrow_disabled.png)
+
+QDateEdit::down-arrow:on
+QDateEdit::down-arrow:hover
+QDateEdit::down-arrow:focus
+    image url(:/qss_icons/rc/down_arrow.png)
